@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import java.beans.Expression;
 import java.util.Arrays;
 
 @Configuration
@@ -16,6 +17,9 @@ public class DependencyInjectionLauncherApplication {
         try(var context = new AnnotationConfigApplicationContext(DependencyInjectionLauncherApplication.class)) {
 
             Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+//            Example e  = new Example();
+//            System.out.println("Example class : " + e);
+            System.out.println(context.getBean(Example.class));
         }
     }
 
